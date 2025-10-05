@@ -1,73 +1,69 @@
-# ETL Pipeline with Python and SQL
+## Project Name
+# ETL Pipeline with T-SQL and SQL Server (Bike Sales Analysis)
 
-![Pipeline Diagram](./pipeline-diagram.png) <!-- Replace with your actual PNG file name/path -->
+# Overview
 
-## Overview
+This ETL demonstrates a robust **Medallion Architecture** $\text{ETL}$ pipeline implemented entirely with **$\text{T-SQL}$** within **SQL Server**. The pipeline is designed to efficiently process, clean, and load Bike Sales data from two source years ($\text{CSV}$ files) into a structured Data Warehouse, creating a clean, integrated **Gold Layer** ready for business intelligence and analytics.
 
-This repository demonstrates a robust ETL (Extract, Transform, Load) pipeline implemented with Python and SQL. The pipeline is designed to efficiently process, clean, and load data from various sources into a SQL database, enabling seamless data integration and analytics.
+***
 
 ## Features
 
-- **End-to-End ETL Workflow**: Extract data from multiple sources, transform it as needed, and load it into SQL tables.
-- **Data Cleansing**: Automated routines for cleaning and validating raw data.
-- **Modular Design**: Easily extend and customize pipeline components.
-- **Error Handling**: Built-in logging and error management for reliable operations.
-- **SQL Integration**: Uses T-SQL for efficient data manipulation and storage.
+* **Medallion Architecture:** Follows the Bronze $\rightarrow$ Silver $\rightarrow$ Gold data layering standard for high integrity and scalability.
+* **High-Speed Ingestion:** Utilizes the efficient **$\text{BULK INSERT}$** command for rapid raw data loading.
+* **Comprehensive Data Cleansing:** Standardizes data types, handles complex date conversions, and cleans categorical fields (e.g., standardizing gender codes).
+* **Data Integration:** Consolidates data from multiple sources (2021 and 2022) into a single analytical table using **$\text{UNION ALL}$**.
+* **$\text{SQL}$ Focus:** Logic is implemented primarily through stored procedures and native $\text{T-SQL}$ for maximum performance.
+
+***
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.x
-- SQL Server (or compatible database)
-- Required Python libraries (see `requirements.txt`)
+* SQL Server (or compatible database)
+* Python
+* **SQL Server Management Studio (SSMS)** to execute the scripts.
+* The raw data files (`Bike_Sales_2021_cleaned.csv` and `Bike_Sales_2022_cleaned.csv`) must be placed in the location specified in the `load_bronze` stored procedure (e.g., `C:\Data\`).
 
 ### Setup
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/taylorwanyama/ETL-Pipeline-with-Python-and-SQL.git
-   ```
+1.  **Clone the repository:**
+    ```sh
+    git clone [https://github.com/taylorwanyama/ETL-Pipeline-with-Python-and-SQL.git](https://github.com/taylorwanyama/ETL-Pipeline-with-Python-and-SQL.git)
+    ```
+2.  **Execute the SQL Scripts Sequentially:** Run the following files in order within SSMS:
 
-2. **Install dependencies:**
-   ```sh
-   pip install -r requirements.txt
-   ```
+    | Order | Script File | Purpose |
+    | :--- | :--- | :--- |
+    | **1** | `01_db_and_schemas_setup.sql` | Creates the `ETL_DataWarehouse` database and the Bronze, Silver, and Gold schemas. |
+    | **2** | `02_bronze_layer_load.sql` | Creates raw tables and the `load_bronze` procedure to import $\text{CSV}$ data. |
+    | **3** | `03_silver_layer_transform.sql` | Executes the $\text{ETL}$ process to clean, standardize, and load the 2021 and 2022 data into the Silver Layer tables. |
+    | **4** | `04_gold_layer_integration.sql` | Merges the two clean Silver tables into the final, combined Gold table using $\text{UNION ALL}$. |
 
-3. **Configure database connection:**
-   - Update the connection details in the configuration file.
+***
 
-4. **Run the pipeline:**
-   ```sh
-   python etl_pipeline.py
-   ```
+## How It Works: The ETL Data Flow
 
-## Project Structure
+This entire process is managed through sequential $\text{T-SQL}$ execution across the three architecture layers:
 
-```
-ETL-Pipeline-with-Python-and-SQL/
-│
-├── etl_pipeline.py
-├── requirements.txt
-├── README.md
-├── pipeline-diagram.png      # Your PNG file
-└── ...
-```
+### 1.**Bronze Layer (Staging)**
+* **Action:** High-volume ingestion. Raw data is loaded into two staging tables.
+* **Structure:** Tables use **$\text{VARCHAR}$** data types for fields like `Date` and `Revenue` to accept source data errors without breaking the load.
 
-## How It Works
+### 2. **Silver Layer (Cleaning)**
+* **Action:** Transformation and Standardization. $\text{T-SQL}$ reads data from the Bronze tables and applies cleansing logic:
+    * **Type Safety:** Uses `TRY_CAST` and `TRY_CONVERT` to safely cast strings to $\text{DECIMAL}$, $\text{INT}$, and $\text{DATE}$ types.
+    * **Data Quality:** $\text{CASE}$ statements standardize categorical fields (e.g., converting 'F' to 'Female' and 'M' to 'Male').
+* **Output:** Two separate, clean, and standardized tables (`Silver.Bike_Sales_2021` and `Silver.Bike_Sales_2022`).
 
-1. **Extraction**: Pulls raw data from sources (CSV, APIs, etc.).
-2. **Transformation**: Cleanses and formats data using Python logic.
-3. **Loading**: Inserts processed data into SQL tables with T-SQL scripts.
+### 3. **Gold Layer (Integration)**
+* **Action:** Final integration and preparation for $\text{BI}$.
+* **Method:** The clean 2021 and 2022 datasets from the Silver Layer are combined using **$\text{UNION ALL}$** into a single master table, `Gold.Combined_bike_sales_data`. This unified structure is optimized for analytics and reporting tools.
 
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests for improvements, bug fixes, or new features.
+***
 
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
 *Created by [taylorwanyama](https://github.com/taylorwanyama)*
