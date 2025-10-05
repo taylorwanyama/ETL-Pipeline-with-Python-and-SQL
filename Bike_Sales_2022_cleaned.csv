@@ -1,0 +1,6 @@
+Date,Day,Month,Year,Customer_Age,Age_Group,Customer_Gender,Country,State,Product_Category,Sub_Category,Product,Order_Quantity,Unit_Cost,Unit_Price,Profit,Cost,Revenue
+03/02/2022,27,February,2022,29,Young Adults (25-34),F,United States,California,Bikes,Mountain Bikes,Mountain-200 Silver  42,18,1266.0,2320.0,18972.0,22788.0,41760.0
+03/03/2022,31,March,2022,38,Adults (35-64),M,United Kingdom,England,Bikes,Mountain Bikes,Mountain-200 Silver  42,16,1266.0,2320.0,16864.0,20256.0,37120.0
+03/04/2022,30,April,2022,42,Adults (35-64),F,Australia,Victoria,Bikes,Road Bikes,Road-750 Black  48,11,344.0,540.0,2156.0,3784.0,5940.0
+03/05/2022,31,May,2022,47,Adults (35-64),M,Australia,South Australia,Bikes,Road Bikes,Road-550-W Yellow  44,17,713.0,1120.0,6919.0,12121.0,19040.0
+04/06/2022,30,June,2022,28,Young Adults (25-34),M,United Kingdom,England,Bikes,Mountain Bikes,Mountain-200 Black  38,36,1252.0,2295.0,37548.0,45072.0,82620.0

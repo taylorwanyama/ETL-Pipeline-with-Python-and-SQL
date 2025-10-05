@@ -1,0 +1,6 @@
+Date,Day,Month,Year,Customer_Age,Age_Group,Customer_Gender,Country,State,Product_Category,Sub_Category,Product,Order_Quantity,Unit_Cost,Unit_Price,Profit,Cost,Revenue
+03/02/2022,27,February,2022,29,Young Adults (25-34),F,United States,California,Bikes,Mountain Bikes,"Mountain-200 Silver, 42",18," $1,266.00 "," $2,320.00 "," $18,972.00 "," $22,788.00 "," $41,760.00 "
+03/03/2022,31,March,2022,38,Adults (35-64),M,United Kingdom,England,Bikes,Mountain Bikes,"Mountain-200 Silver, 42",16," $1,266.00 "," $2,320.00 "," $16,864.00 "," $20,256.00 "," $37,120.00 "
+03/04/2022,30,April,2022,42,Adults (35-64),F,Australia,Victoria,Bikes,Road Bikes,"Road-750 Black, 48",11, $344.00 , $540.00 ," $2,156.00 "," $3,784.00 "," $5,940.00 "
+03/05/2022,31,May,2022,47,Adults (35-64),M,Australia,South Australia,Bikes,Road Bikes,"Road-550-W Yellow, 44",17, $713.00 ," $1,120.00 "," $6,919.00 "," $12,121.00 "," $19,040.00 "
+04/06/2022,30,June,2022,28,Young Adults (25-34),M,United Kingdom,England,Bikes,Mountain Bikes,"Mountain-200 Black, 38",36," $1,252.00 "," $2,295.00 "," $37,548.00 "," $45,072.00 "," $82,620.00 "

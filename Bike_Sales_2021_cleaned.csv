@@ -1,0 +1,14 @@
+Date,Day,Month,Year,Customer_Age,Age_Group,Customer_Gender,Country,State,Product_Category,Sub_Category,Product,Order_Quantity,Unit_Cost,Unit_Price,Profit,Cost,Revenue
+31/01/2021,31,January,2021,39,Adults (35-64),M,United States,Washington,Bikes,Road Bikes,Road-550-W Yellow  38,30,713.0,1120.0,12210.0,21390.0,33600.0
+28/02/2021,28,February,2021,33,Young Adults (25-34),F,France,Yveline,Bikes,Road Bikes,Road-150 Red  48,20,2171.0,3578.0,28140.0,43420.0,71560.0
+31/03/2021,31,March,2021,17,Youth (<25),M,Canada,British Columbia,Bikes,Road Bikes,Road-250 Red  44,10,1519.0,2443.0,9240.0,15190.0,24430.0
+30/04/2021,30,April,2021,23,Youth (<25),M,Australia,Victoria,Bikes,Mountain Bikes,Mountain-200 Black  46,10,1252.0,2295.0,10430.0,12520.0,22950.0
+31/05/2021,31,May,2021,42,Adults (35-64),M,United States,California,Bikes,Road Bikes,Road-750 Black  44,11,344.0,540.0,2156.0,3784.0,5940.0
+30/06/2021,30,June,2021,40,Adults (35-64),M,Australia,Victoria,Bikes,Road Bikes,Road-550-W Yellow  40,14,713.0,1120.0,5698.0,9982.0,15680.0
+31/07/2021,31,July,2021,41,Adults (35-64),F,Australia,Queensland,Bikes,Road Bikes,Road-250 Red  58,30,1555.0,2443.0,26640.0,46650.0,73290.0
+31/08/2021,31,August,2021,32,Young Adults (25-34),M,United Kingdom,England,Bikes,Road Bikes,Road-550-W Yellow  38,14,713.0,1120.0,5698.0,9982.0,15680.0
+30/09/2021,30,September,2021,35,Adults (35-64),F,United States,California,Bikes,Road Bikes,Road-550-W Yellow  48,12,713.0,1120.0,4884.0,8556.0,13440.0
+31/10/2021,31,October,2021,28,Young Adults (25-34),M,United Kingdom,England,Bikes,Mountain Bikes,Mountain-200 Black  38,40,1252.0,2295.0,41720.0,50080.0,91800.0
+30/11/2021,30,November,2021,39,Adults (35-64),F,United States,California,Bikes,Road Bikes,Road-150 Red  48,47,2171.0,3578.0,66129.0,102037.0,168166.0
+31/12/2021,31,December,2021,45,Adults (35-64),M,Canada,British Columbia,Bikes,Road Bikes,Road-750 Black  44,32,344.0,540.0,6272.0,11008.0,17280.0
+31/01/2022,31,January,2022,45,Adults (35-64),F,Australia,South Australia,Bikes,Road Bikes,Road-750 Black  48,28,344.0,540.0,5488.0,9632.0,15120.0
