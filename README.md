@@ -1,5 +1,4 @@
-## Project Name
-# ETL Pipeline with T-SQL and SQL Server (Bike Sales Analysis)
+##  ETL Pipeline with Python and SQL Server (Bike Sales Analysis)
 
 # Overview
 
@@ -36,10 +35,10 @@ This ETL demonstrates a robust **Medallion Architecture** $\text{ETL}$ pipeline 
 
     | Order | Steps | Description |
     | :--- | :--- | :--- |
-    | **1** | `01_db_and_schemas_setup` | Creation of  the `ETL_DataWarehouse` database and the Bronze, Silver, and Gold schemas. |
-    | **2** | `02_bronze_layer_load` | Creation raw tables and the `load_bronze` procedure to import $\text{CSV}$ data. |
-    | **3** | `03_silver_layer_transform` | Execution of $\text{ETL}$ process to clean, standardize, and load the 2021 and 2022 data into the Silver Layer tables. |
-    | **4** | `04_gold_layer_integration` | Merging of the two clean Silver tables into the final, combined Gold table using $\text{UNION ALL}$. |
+    | **1** | `01. db_and_schemas_setup` | Creation of  the `ETL_DataWarehouse` database and the Bronze, Silver, and Gold schemas. |
+    | **2** | `02. bronze_layer_load` | Creation raw tables and the `load_bronze` procedure to import $\text{CSV}$ data. |
+    | **3** | `03. silver_layer_transform` | Execution of $\text{ETL}$ process to clean, standardize, and load the 2021 and 2022 data into the Silver Layer tables. |
+    | **4** | `04. gold_layer_integration` | Merging of the two clean Silver tables into the final, combined Gold table using $\text{UNION ALL}$. |
 
 ***
 
